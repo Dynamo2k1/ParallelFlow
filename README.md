@@ -1164,6 +1164,14 @@ doxygen Doxyfile
 
 ---
 
+## 👥 Contributors
+
+A huge thanks to the team that made this project possible:
+
+  * 👨‍💻 **Rana Uzair Ahmad** - [Dynamo2k](https://github.com/Dynamo2k)
+  * 👨‍💻 **Muhammad Usman** - [Prof.Paradox](https://github.com/ProfParadox3)
+
+---
 ## License
 
 This project is for educational and research purposes. See LICENSE file for details.
