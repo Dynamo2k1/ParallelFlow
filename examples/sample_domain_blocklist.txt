@@ -1,0 +1,16 @@
+# Example Blocklist: Malicious Domains
+# One domain per line (matches domain and all subdomains)
+# Lines starting with # are comments
+
+# Known malicious domains (examples only)
+# malware.example.com
+# evil.domain.org
+# bad-actor.net
+
+# C2 domains (fictional)
+# c2-callback.example.org
+# exfil-server.badsite.com
+
+# Typosquatting examples
+# g00gle.com
+# micros0ft.com

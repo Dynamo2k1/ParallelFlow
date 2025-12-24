@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PCAP Analyzer Alert",
+  "description": "Schema for individual alerts in alerts.ndjson",
+  "type": "object",
+  "properties": {
+    "ts": {
+      "type": "number",
+      "description": "Unix timestamp with fractional seconds"
+    },
+    "time": {
+      "type": "string",
+      "description": "ISO 8601 formatted timestamp"
+    },
+    "type": {
+      "type": "string",
+      "description": "Alert type identifier",
+      "enum": [
+        "blocklisted_ip",
+        "blocklisted_domain",
+        "keyword_match",
+        "port_scan",
+        "dns_tunnel",
+        "beaconing",
+        "exfiltration",
+        "sensitive_data",
+        "suspicious_tls",
+        "arp_spoof"
+      ]
+    },
+    "src_ip": {
+      "type": "string",
+      "description": "Source IP address"
+    },
+    "dst_ip": {
+      "type": "string",
+      "description": "Destination IP address"
+    },
+    "proto": {
+      "type": "string",
+      "description": "Protocol (TCP, UDP, etc.)"
+    },
+    "src_port": {
+      "type": "integer",
+      "description": "Source port",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "dst_port": {
+      "type": "integer",
+      "description": "Destination port",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "detail": {
+      "type": "string",
+      "description": "Human-readable alert description"
+    },
+    "subdomain_len": {
+      "type": "integer",
+      "description": "Length of suspicious subdomain (DNS tunnel alerts)"
+    },
+    "entropy": {
+      "type": "number",
+      "description": "Entropy value for DNS tunnel detection"
+    },
+    "interval_mean": {
+      "type": "number",
+      "description": "Mean connection interval for beaconing alerts"
+    },
+    "interval_stddev": {
+      "type": "number",
+      "description": "Standard deviation of intervals for beaconing"
+    },
+    "sample_count": {
+      "type": "integer",
+      "description": "Number of samples used in beaconing detection"
+    },
+    "bytes_sent": {
+      "type": "integer",
+      "description": "Bytes sent for exfiltration alerts"
+    }
+  },
+  "required": ["ts", "type", "src_ip", "dst_ip", "detail"]
+}

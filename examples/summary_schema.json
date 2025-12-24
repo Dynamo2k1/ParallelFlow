@@ -1,0 +1,227 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PCAP Analyzer Summary",
+  "description": "Schema for summary.json output from pdc_pcap_analyzer",
+  "type": "object",
+  "properties": {
+    "world_size": {
+      "type": "integer",
+      "description": "Number of MPI ranks used in the analysis",
+      "minimum": 1
+    },
+    "packets": {
+      "type": "integer",
+      "description": "Total packets processed",
+      "minimum": 0
+    },
+    "bytes": {
+      "type": "integer",
+      "description": "Total bytes processed",
+      "minimum": 0
+    },
+    "ipv4": {
+      "type": "integer",
+      "description": "IPv4 packet count",
+      "minimum": 0
+    },
+    "ipv6": {
+      "type": "integer",
+      "description": "IPv6 packet count",
+      "minimum": 0
+    },
+    "tcp": {
+      "type": "integer",
+      "description": "TCP packet count",
+      "minimum": 0
+    },
+    "udp": {
+      "type": "integer",
+      "description": "UDP packet count",
+      "minimum": 0
+    },
+    "icmp": {
+      "type": "integer",
+      "description": "ICMP packet count",
+      "minimum": 0
+    },
+    "icmpv6": {
+      "type": "integer",
+      "description": "ICMPv6 packet count",
+      "minimum": 0
+    },
+    "arp": {
+      "type": "integer",
+      "description": "ARP packet count",
+      "minimum": 0
+    },
+    "other": {
+      "type": "integer",
+      "description": "Other protocol packet count",
+      "minimum": 0
+    },
+    "dns_queries": {
+      "type": "integer",
+      "description": "DNS query count",
+      "minimum": 0
+    },
+    "http_requests": {
+      "type": "integer",
+      "description": "HTTP request count",
+      "minimum": 0
+    },
+    "tls_handshakes": {
+      "type": "integer",
+      "description": "TLS handshake count",
+      "minimum": 0
+    },
+    "dhcp_messages": {
+      "type": "integer",
+      "description": "DHCP message count",
+      "minimum": 0
+    },
+    "alerts_total": {
+      "type": "integer",
+      "description": "Total security alerts",
+      "minimum": 0
+    },
+    "alerts_blocklisted_ip": {
+      "type": "integer",
+      "description": "Alerts for blocklisted IPs",
+      "minimum": 0
+    },
+    "alerts_blocklisted_domain": {
+      "type": "integer",
+      "description": "Alerts for blocklisted domains",
+      "minimum": 0
+    },
+    "alerts_keyword": {
+      "type": "integer",
+      "description": "Alerts for keyword matches",
+      "minimum": 0
+    },
+    "alerts_portscan": {
+      "type": "integer",
+      "description": "Port scan detection alerts",
+      "minimum": 0
+    },
+    "alerts_dns_tunnel": {
+      "type": "integer",
+      "description": "DNS tunneling alerts",
+      "minimum": 0
+    },
+    "alerts_beaconing": {
+      "type": "integer",
+      "description": "Beaconing detection alerts",
+      "minimum": 0
+    },
+    "alerts_exfil": {
+      "type": "integer",
+      "description": "Data exfiltration alerts",
+      "minimum": 0
+    },
+    "alerts_sensitive": {
+      "type": "integer",
+      "description": "Sensitive data exposure alerts",
+      "minimum": 0
+    },
+    "files_carved": {
+      "type": "integer",
+      "description": "Files extracted from traffic",
+      "minimum": 0
+    },
+    "credentials_found": {
+      "type": "integer",
+      "description": "Plaintext credentials detected",
+      "minimum": 0
+    },
+    "top_src_bytes": {
+      "type": "array",
+      "description": "Top source IPs by bytes sent",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ip": { "type": "string" },
+          "count": { "type": "integer" }
+        },
+        "required": ["ip", "count"]
+      }
+    },
+    "top_dst_bytes": {
+      "type": "array",
+      "description": "Top destination IPs by bytes received",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ip": { "type": "string" },
+          "count": { "type": "integer" }
+        },
+        "required": ["ip", "count"]
+      }
+    },
+    "top_dns_qnames": {
+      "type": "array",
+      "description": "Top DNS query names",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": { "type": "string" },
+          "count": { "type": "integer" }
+        },
+        "required": ["key", "count"]
+      }
+    },
+    "top_http_hosts": {
+      "type": "array",
+      "description": "Top HTTP hosts",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": { "type": "string" },
+          "count": { "type": "integer" }
+        },
+        "required": ["key", "count"]
+      }
+    },
+    "top_tls_sni": {
+      "type": "array",
+      "description": "Top TLS SNI values",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": { "type": "string" },
+          "count": { "type": "integer" }
+        },
+        "required": ["key", "count"]
+      }
+    },
+    "portscan_suspects": {
+      "type": "array",
+      "description": "IPs suspected of port scanning",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ip": { "type": "string" },
+          "count": { "type": "integer" }
+        },
+        "required": ["ip", "count"]
+      }
+    },
+    "carved_files": {
+      "type": "array",
+      "description": "Files extracted from HTTP traffic",
+      "items": {
+        "type": "object",
+        "properties": {
+          "filename": { "type": "string" },
+          "sha256": { "type": "string" },
+          "content_type": { "type": "string" },
+          "size": { "type": "integer" },
+          "src_ip": { "type": "string" },
+          "dst_ip": { "type": "string" }
+        },
+        "required": ["filename", "sha256", "size"]
+      }
+    }
+  },
+  "required": ["world_size", "packets", "bytes"]
+}

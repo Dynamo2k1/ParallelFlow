@@ -1,0 +1,42 @@
+# Example Keywords for Payload Scanning
+# One keyword per line
+# Lines starting with # are comments
+
+# Command execution
+powershell
+cmd.exe
+/bin/sh
+/bin/bash
+
+# Sensitive paths
+/etc/passwd
+/etc/shadow
+/proc/self
+..\\..\\
+
+# SQL injection indicators
+' OR '1'='1
+UNION SELECT
+; DROP TABLE
+
+# Web shell indicators
+eval(
+base64_decode
+system(
+exec(
+
+# Credential patterns
+password=
+passwd=
+pwd=
+secret=
+api_key=
+apikey=
+token=
+auth_token=
+
+# HTTP sensitive headers
+Authorization: Basic
+Authorization: Bearer
+Set-Cookie:
+X-API-Key:

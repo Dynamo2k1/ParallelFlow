@@ -1,0 +1,69 @@
+# Doxyfile for MPI PCAP Threat Scanner
+
+# Project settings
+PROJECT_NAME           = "MPI PCAP Threat Scanner"
+PROJECT_NUMBER         = "1.0"
+PROJECT_BRIEF          = "High-performance distributed PCAP analysis tool"
+OUTPUT_DIRECTORY       = docs/doxygen
+
+# Input settings
+INPUT                  = include src README.md docs/ARCHITECTURE.md docs/API.md
+FILE_PATTERNS          = *.h *.cpp *.md
+RECURSIVE              = NO
+USE_MDFILE_AS_MAINPAGE = README.md
+
+# Output settings
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+GENERATE_MAN           = NO
+GENERATE_XML           = NO
+
+# HTML settings
+HTML_OUTPUT            = html
+HTML_COLORSTYLE_HUE    = 220
+HTML_COLORSTYLE_SAT    = 100
+HTML_COLORSTYLE_GAMMA  = 80
+
+# Extraction settings
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+
+# Documentation settings
+BRIEF_MEMBER_DESC      = YES
+REPEAT_BRIEF           = YES
+ALWAYS_DETAILED_SEC    = NO
+INLINE_INHERITED_MEMB  = NO
+FULL_PATH_NAMES        = NO
+JAVADOC_AUTOBRIEF      = YES
+MARKDOWN_SUPPORT       = YES
+
+# Source browsing
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+STRIP_CODE_COMMENTS    = NO
+
+# Graph settings
+HAVE_DOT               = NO
+CLASS_GRAPH            = NO
+COLLABORATION_GRAPH    = NO
+INCLUDE_GRAPH          = NO
+INCLUDED_BY_GRAPH      = NO
+GRAPHICAL_HIERARCHY    = NO
+
+# Warning settings
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO
+WARN_IF_DOC_ERROR      = YES
+
+# Preprocessing
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = NO
+EXPAND_ONLY_PREDEF     = NO
+PREDEFINED             = 
+
+# Build related
+SORT_MEMBER_DOCS       = YES
+SORT_BRIEF_DOCS        = NO
+SHOW_NAMESPACES        = YES

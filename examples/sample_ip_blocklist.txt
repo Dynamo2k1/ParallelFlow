@@ -1,0 +1,15 @@
+# Example Blocklist: Malicious IPs
+# One IP or CIDR per line
+# Lines starting with # are comments
+
+# Known malicious IPs (examples only - not real threats)
+# 10.0.0.0/8
+# 192.0.2.1
+# 198.51.100.50
+
+# C2 IP examples (fictional)
+# 45.33.32.156
+# 104.244.42.1
+
+# Tor exit nodes (example range)
+# 185.220.101.0/24
